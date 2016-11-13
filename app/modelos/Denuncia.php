@@ -47,14 +47,13 @@
 		}
 		public function getAll()
 		{
-			$sql = "SELECT 		iddenuncia,idusuario, idubigeo, idtipo_denuncia, denunciado,
-								cargo, organismo_implicado,
-								fecha, hora, descripcion,estado
-					FROM denuncia
-					WHERE estado = 1";
+			$sql = "SELECT 	d.iddenuncia,u.idusuario, u.Fname, t.nombre,d.titulo, d.denunciado,
+								d.cargo, d.organismo_implicado,
+								d.fecha, d.hora, d.descripcion,ifnull((select archivo from archivo where iddenuncia=d.iddenuncia LIMIT 0,1),'sinimagen.JPG') as imagen
+								FROM denuncia d INNER JOIN users u ON d.idusuario=u.idusuario INNER JOIN tipo_denuncia t ON d.idtipo_denuncia=t.idtipo_denuncia
+					WHERE d.estado ='A'";
 			return ejecutarConsulta($sql);
 		}
-		
 		public function getTiposDenuncias()
 		{
 			$sql = "SELECT 	*

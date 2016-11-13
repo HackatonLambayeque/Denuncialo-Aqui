@@ -16,7 +16,8 @@ function init(){
     $("#formularioDenuncia").on("submit",function(e)
 	{
 		addOrEdit(e);	
-	})
+	});
+	listarArchivos();
 }
 
 //Mostramos los departamentos
@@ -74,5 +75,13 @@ function addOrEdit(e)
 	    }
 	});
 	limpiar();
+}
+function listarArchivos()
+{
+	$("#divarchivos").html("");
+	//Cargamos los items al combobox tipo
+	$.post("../ajax/denuncia.php?op=lista", function(r){
+	            $("#divdenuncias").html(r);
+	});
 }
 init();

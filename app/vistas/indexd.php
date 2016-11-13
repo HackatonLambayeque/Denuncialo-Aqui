@@ -193,18 +193,151 @@ session_start();
  					</div>
  					</br></br>
  				<div class="row">
+					<div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
 
-					<!-- Inicio Item de noticias -->
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
 
-					<div id="divdenuncias"></div>
-					<!-- fin Item de noticias -->
+									<!-- If you want to add a checkbox to this form, uncomment this code
 
-
-
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
 					</div>
+<div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div><div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div><div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%; "> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
 					</div>
+
+
 				</div>
+
+
  				</div>
+
 				<br><br>
 
 				 
@@ -228,7 +361,6 @@ session_start();
 	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="assets/js/material.min.js"></script>
-	<script src="denuncia.js"></script>
 
 	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 	<script src="assets/js/nouislider.min.js" type="text/javascript"></script>
@@ -240,16 +372,18 @@ session_start();
 	<script src="assets/js/material-kit.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
+
 		$().ready(function(){
 			// the body of this function is in assets/material-kit.js
 			materialKit.initSliders();
             window_width = $(window).width();
+
             if (window_width >= 992){
                 big_image = $('.wrapper > .header');
+
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
+
 		});
 	</script>
 </html>
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help

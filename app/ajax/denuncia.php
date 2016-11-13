@@ -47,4 +47,36 @@
 		            echo '<option value=' . $reg->idtipo_denuncia . '>' . $reg->nombre . '</option>';
 		        }		
 		break;
+		case "lista":
+				$rspta = $denuncia->getAll();
+				while ($reg = $rspta->fetch_object())
+				{
+		            echo '<div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>'.$reg->titulo.'</h4>
+									 
+								</div>
+								<p class="text-divider">'.$reg->denunciado.'</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="../files/denuncias/'.$reg->imagen.'" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div>';
+		        }		
+			break;	
 	}	
