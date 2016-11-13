@@ -10,15 +10,15 @@
 		}
 
 		public function add($idusuario,$idubigeo,$idtipo_denuncia,$denunciado,$cargo,$organismo_implicado,
-							$institucion_nombre,$institucion_direccion,$fecha,$hora,$descripcion)
+							$institucion_nombre,$institucion_direccion,$descripcion)
 		{				
 			$sql = "INSERT INTO denuncia(idusuario, idubigeo, idtipo_denuncia, denunciado,
 								cargo, organismo_implicado, institucion_nombre, institucion_direccion,
 								fecha, hora, descripcion,estado)
 					VALUES('$idusuario','$idubigeo','$idtipo_denuncia','$denunciado',
 						   '$cargo','$organismo_implicado','$institucion_nombre','$institucion_direccion',
-						   '$fecha','$hora','$descripcion','1');";
-			return executeQuery($sql);			
+						   now(),TIME(now()),'$descripcion','1');";
+			return ejecutarConsulta($sql);			
 		}
 			
 		public function delete($iddenuncia)
@@ -26,7 +26,7 @@
 			$sql = "UPDATE denuncia
 					SET estado = 0
 					WHERE iddenuncia = '$iddenuncia'";
-			return executeQuery($sql);
+			return ejecutarConsulta($sql);
 		}
 		public function show($iddenuncia)
 		{
@@ -35,7 +35,7 @@
 								fecha, hora, descripcion,estado
 					FROM denuncia
 					WHERE iddenuncia = '$iddenuncia'";
-			return executeQuerySingleRow($sql);
+			return ejecutarConsultaSimpleFila($sql);
 
 		}
 		public function getAll()
@@ -45,7 +45,7 @@
 								fecha, hora, descripcion,estado
 					FROM denuncia
 					WHERE estado = 1";
-			return executeQuery($sql);
+			return ejecutarConsulta($sql);
 		}
 		
 
