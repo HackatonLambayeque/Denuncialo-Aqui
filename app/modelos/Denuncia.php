@@ -54,6 +54,7 @@
 					WHERE d.estado ='A'";
 			return ejecutarConsulta($sql);
 		}
+
 		public function getTiposDenuncias()
 		{
 			$sql = "SELECT 	*

@@ -66,7 +66,9 @@
 									 "1"=>$reg->descripcion);
 				}		
 				echo json_encode($data);
+
 		break;
+
 		case "lista":
 				$rspta = $denuncia->getAll();
 				while ($reg = $rspta->fetch_object())
@@ -89,7 +91,7 @@
 			                    </div>
 								</div>
 								<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+									<a href="#" onclick="comentar('.$reg->iddenuncia.')" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
 								</div>
 							</form>
 						</div>

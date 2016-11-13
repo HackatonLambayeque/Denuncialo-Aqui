@@ -249,6 +249,12 @@ session_start();
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
 		});
+
+
+		function comentar(id)
+		{
+			window.location.href="comentarios.php?id="+id
+		}
 	</script>
 </html>
 Contact GitHub API Training Shop Blog About
