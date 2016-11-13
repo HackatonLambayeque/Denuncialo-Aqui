@@ -14,3 +14,6 @@
 	//Definimos un nombre secundario de nuestra
 	//aplicación
 	define("APP_name_part2","IT");
+
+	define("BASE_URL","http://localhost/Denuncialo-Aqui/");
+

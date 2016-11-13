@@ -3,6 +3,7 @@ session_start();
 // added in v4.0.0
 require_once 'autoload.php';
 require_once 'functions.php';
+require_once '../config/global.php';
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -17,7 +18,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '207282566349827','bf858fa49ab0091f367ce84fb32d4957' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://localhost/Denuncialo-Aqui/app/vistas/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper(BASE_URL."app/vistas/fbconfig.php");
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
