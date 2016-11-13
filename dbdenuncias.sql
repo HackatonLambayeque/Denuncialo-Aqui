@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2016 a las 02:00:03
+-- Tiempo de generación: 13-11-2016 a las 03:59:32
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 7.0.9
 
@@ -71,6 +71,38 @@ CREATE TABLE `pasos_denuncia` (
   `descripcion` varchar(512) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `pasos_denuncia`
+--
+
+INSERT INTO `pasos_denuncia` (`idpasos_denuncia`, `idtipo_denuncia`, `numero`, `nombre`, `descripcion`) VALUES
+(3, 4, '1', 'Llamar al 105', 'Es el primer paso. En caso un ciudadano haya sido víctima de un asalto deberá reportarlo a la central de emergencias de la Policía Nacional y, de igual forma, si algún delincuente ingresó a su vivienda a robar (hurto).'),
+(4, 4, '2', 'Asentar la denuncia', 'Este segundo paso tiene distintas modalidades. Según los representantes de la Policía Nacional, la víctima puede acudir a la comisaría y presentar un escrito en mesa de partes, denunciando lo ocurrido.'),
+(5, 4, '3', 'Llevar pruebas', 'Una recomendación de los oficiales es que, en caso la persona haya sido víctima del robo de un objeto o artefacto de valor, lleve las pruebas que “acrediten su pertenencia”.'),
+(6, 4, '4', 'Exigir su trámite', 'La dirección policial recordó a las personas que no deben efectuar ningún pago para asentar su denuncia y deben exigir a las autoridades que tramitan la misma a la brevedad posible.'),
+(7, 1, '1', 'Llenar Formulario IG-01', 'Puede usar el Formulario IG-01 para presentar su denuncia.'),
+(8, 1, '2', 'Detalle lo sucedido', 'Diga ¿que ocurrió?, ¿cuándo?, ¿dónde?, ¿cómo? y ¿a quién denuncia?'),
+(9, 1, '3', 'Aporte pruebas', 'Aporte pruebas de su denuncia, y/o información que permita comprobarla y/o ubicarla. Por ejemplo: fotos de teléfono celular, videos, grabaciones, etc.'),
+(10, 1, '4', 'Identificar al denunciado', 'No olvide identificar quién es, él o los denunciados. ¿A quién denuncia usted?.'),
+(11, 2, '1', 'Llenar Formulario IG-01', 'Puede usar el Formulario IG-01 para presentar su denuncia.'),
+(12, 2, '2', 'Detalle lo sucedido', 'Diga ¿que ocurrió?, ¿cuándo?, ¿dónde?, ¿cómo? y ¿a quién denuncia?'),
+(13, 2, '3', 'Aporte pruebas', 'Aporte pruebas de su denuncia, y/o información que permita comprobarla y/o ubicarla. Por ejemplo: fotos de teléfono celular, videos, grabaciones, etc.'),
+(14, 2, '4', 'Identificar al denunciado', 'No olvide identificar quién es, él o los denunciados. ¿A quién denuncia usted?.'),
+(15, 5, '1', 'Grabar llamada y guardar documentos', 'En caso una persona sea víctima de extorsión, los policías recomiendan que, como primer paso, mantengan la calma e intenten grabar la llamada sin que los delincuentes se percaten de ello.'),
+(16, 5, '2', 'Llamar al 105', 'Al igual que una víctima de robo o hurto, todo ciudadano deberá reportarlo a la central de emergencias que luego deberá derivarlo a la comisaría del sector.'),
+(17, 5, '3', 'Asentar la denuncia', 'En este punto y, a diferencia de una denuncia por un asalto, los policías deberán derivar a las víctimas a una Divincri, ya que son unidades especializadas para este tipo de crímenes.'),
+(18, 5, '4', 'Tomar medidas de protección', 'Las personas deberán asegurar su vivienda o el local por cualquier medio posible, con el fin de evitar daños si los extorsionadores intentan atacarlos.'),
+(19, 6, '1', 'Llenar Formulario IG-01', 'Puede usar el Formulario IG-01 para presentar su denuncia.'),
+(20, 6, '2', 'Detalle lo sucedido', 'Diga ¿que ocurrió?, ¿cuándo?, ¿dónde?, ¿cómo? y ¿a quién denuncia?'),
+(21, 6, '3', 'Aporte pruebas', 'Aporte pruebas de su denuncia, y/o información que permita comprobarla y/o ubicarla. Por ejemplo: fotos de teléfono celular, videos, grabaciones, etc.'),
+(22, 6, '4', 'Identificar al denunciado', 'No olvide identificar quién es, él o los denunciados. ¿A quién denuncia usted?.'),
+(23, 7, '1', 'Guardar toda la información posible', 'Es recomendable guardar, ya sea en formato digital mediante capturas de pantalla, en documentos PDF o imprimiéndolos en papel si es necesario, todos los datos que se tengan del timador.'),
+(24, 7, '2', 'Poner una denuncia', 'A nadie le gusta reconocer que ha sido timado, pero la denuncia del delito es fundamental. Además, los cuerpos y fuerzas de seguridad lo ponen muy fácil: en la Policía se puede denunciar un ciberdelito desde cualquier comisaría.'),
+(25, 8, '1', 'Llenar Formulario IG-01', 'Puede usar el Formulario IG-01 para presentar su denuncia.'),
+(26, 8, '2', 'Detalle lo sucedido', 'Diga ¿que ocurrió?, ¿cuándo?, ¿dónde?, ¿cómo? y ¿a quién denuncia?'),
+(27, 8, '3', 'Aporte pruebas', 'Aporte pruebas de su denuncia, y/o información que permita comprobarla y/o ubicarla. Por ejemplo: fotos de teléfono celular, videos, grabaciones, etc.'),
+(28, 8, '4', 'Identificar al denunciado', 'No olvide identificar quién es, él o los denunciados. ¿A quién denuncia usted?.');
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +115,19 @@ CREATE TABLE `tipo_denuncia` (
   `descripcion` varchar(512) DEFAULT NULL,
   `estado` varchar(1) NOT NULL DEFAULT 'A'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tipo_denuncia`
+--
+
+INSERT INTO `tipo_denuncia` (`idtipo_denuncia`, `nombre`, `descripcion`, `estado`) VALUES
+(1, 'Abuso de Autoridad', NULL, 'A'),
+(2, 'Corrupción', NULL, 'A'),
+(4, 'Robo', NULL, 'A'),
+(5, 'Secuestro - Extorsión', NULL, 'A'),
+(6, 'Trata de Personas', NULL, 'A'),
+(7, 'Estafa', NULL, 'A'),
+(8, 'Violencia Familiar', NULL, 'A');
 
 -- --------------------------------------------------------
 
@@ -2243,12 +2288,12 @@ ALTER TABLE `denuncia`
 -- AUTO_INCREMENT de la tabla `pasos_denuncia`
 --
 ALTER TABLE `pasos_denuncia`
-  MODIFY `idpasos_denuncia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpasos_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --
 ALTER TABLE `tipo_denuncia`
-  MODIFY `idtipo_denuncia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtipo_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
