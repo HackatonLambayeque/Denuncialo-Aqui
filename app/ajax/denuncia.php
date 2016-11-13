@@ -3,16 +3,17 @@
 	require_once "../modelos/Denuncia.php";
 
 	$denuncia = new Denuncia();
-	$idusuario = isset($_POST["idusuario"]) ? cleanString($_POST["idusuario"]) : ""; 
-	$idubigeo  = isset($_POST["idubigeo"]) ? cleanString($_POST["idubigeo"]) : "";  
-  	$idtipo_denuncia = isset($_POST["idtipo_denuncia"]) ? cleanString($_POST["idtipo_denuncia"]) : "";
-  	$denunciado = isset($_POST["denunciado"]) ? cleanString($_POST["denunciado"]) : "";
+	$idusuario = isset($_SESSION["FBID"]) ? ($_SESSION["FBID"]) : ""; 
+	
+	$idubigeo  = isset($_POST["coddist"]) ? ($_POST["coddist"]) : "";
 
-  	$cargo = isset($_POST["cargo"]) ? cleanString($_POST["cargo"]) : "";
-  	$organismo_implicado = isset($_POST["organismo_implicado"]) ? cleanString($_POST["organismo_implicado"]) : "";
-  	$institucion_nombre = isset($_POST["institucion_nombre"]) ? cleanString($_POST["institucion_nombre"]) : "";
-  	$institucion_direccion = isset($_POST["institucion_direccion"]) ? cleanString($_POST["institucion_direccion"]) : ""
-  	$descripcion = isset($_POST["descripcion"]) ? cleanString($_POST["descripcion"]) : "";
+  	$idtipo_denuncia = isset($_POST["idtipo_denuncia"]) ? ($_POST["idtipo_denuncia"]) : "";
+  	$denunciado = isset($_POST["denunciado"]) ? ($_POST["denunciado"]) : "";
+
+  	$cargo = isset($_POST["cargo"]) ? ($_POST["cargo"]) : "";
+  	$organismo_implicado = isset($_POST["organismo_implicado"]) ? ($_POST["organismo_implicado"]) : "";
+  	
+  	$descripcion = isset($_POST["descripcion"]) ? ($_POST["descripcion"]) : "";
 
 	
 	switch ($_GET["op"]) {
@@ -22,7 +23,7 @@
 			if(empty($iddenuncia))
 			{		
 				$rspta = $denuncia->add($idusuario,$idubigeo,$idtipo_denuncia,$denunciado,$cargo,
-					$organismo_implicado, $institucion_nombre,$institucion_direccion,
+					$organismo_implicado,
 					$descripcion);
 				echo $rspta ? "Denuncia registrada" : "Denuncia no se pudo registrar";
 			}			
@@ -38,5 +39,12 @@
 				$rspta = $denuncia->show($iddenuncia);
 				echo json_encode($rspta);
 			break;	
-		
+
+		case "listarTiposDenuncia":
+				$rspta = $denuncia->getTiposDenuncias();
+				while ($reg = $rspta->fetch_object())
+				{
+		            echo '<option value=' . $reg->idtipo_denuncia . '>' . $reg->nombre . '</option>';
+		        }		
+		break;
 	}	

@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	$coddpto = $_POST["coddpto"]; 
-	$codprov = $_POST["codprov"]; 
+	$coddpto = isset($_POST["coddpto"]) ? $_POST["coddpto"] : "0"; 
+	$codprov = isset($_POST["codprov"]) ? $_POST["codprov"] : "0"; 
 	
 	require_once "../modelos/Ubigeo.php";
     $ubigeo = new Ubigeo();
