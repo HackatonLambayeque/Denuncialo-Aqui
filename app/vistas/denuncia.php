@@ -77,90 +77,209 @@ session_start();
     </head>
 
     <body class="tutorial-page">
-        <?php if (isset($_SESSION['FBID'])): ?>
-            <!--  After user login  -->
+<?php if (isset($_SESSION['FBID'])): ?>      <!--  After user login  -->
 
-            <nav class="navbar navbar-info navbar-fixed-top navbar-color-on-scroll">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="index.php">
-                            <div class="logo-container">
-                                <div class="logo">
-                                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
-                                </div>
-                                <div class="brand">
-                                    <?php echo $_SESSION['FULLNAME']; ?>
-                                </div>
 
-                            </div>
-                        </a>
+ <nav class="navbar navbar-info navbar-fixed-top navbar-color-on-scroll">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.php">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
                     </div>
-                    <div class="collapse navbar-collapse" id="navigation-index">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="logout.php">
-                                    <i class="material-icons">dashboard</i> Cerrar Sesión
-                                </a>
-                            </li>
-
-                        </ul>
+                    <div class="brand">
+                        <?php echo $_SESSION['FULLNAME']; ?>
                     </div>
+
+
                 </div>
-            </nav>
+            </a>
+        </div> 
+        <div class="collapse navbar-collapse" id="navigation-index">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="logout.php">
+                        <i class="material-icons">dashboard</i> Cerrar Sesión
+                    </a>
+                </li>
+                
+                 
 
-            <div class="wrapper">
-                <div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
-                    <div class="container" style="text-align: center;">
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
-                                <div class="brand">
-                                    <img src="assets/img/logden.png" style="width: 80%;">
-                                </div>
-                            </div>
-                        </div>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-                    </div>
-                </div>
-
-                <div class="main main-raised">
-
-                    <div class="section section-download">
-                        <div class="container">
-                            <div class="row text-center">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <h2>DENUNCIA <strong>&</strong> EDUCA</h2>
-                                    <h4>Ingresa y realiza tu denuncia</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        <button class="btn btn-danger btn-round btn-lg">
-                                            <i class="fa fa-bullhorn"></i> DENUNCIAR
-                                            <div class="ripple-container"></div>
-                                        </button>
+                <div class="wrapper">
+                    <div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
+                        <div class="container" style="text-align: center;">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <div class="brand">
+                                        <img src="assets/img/logden.png" style="width: 80%;">
                                     </div>
                                 </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="main main-raised">
+
+                        <div class="section section-download">
+                            <div class="container">
+                                <div class="row text-center">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <h2>DENUNCIA <strong>&</strong> EDUCA</h2>
+                                        <h4>Ingresa y realiza tu denuncia</h4>
+                                    </div>
+
+                                    </br>
+                                    </br>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2" style="padding-top: 80px">
+                                        <div class="card card-signup">
+                                            <form class="form" id="formularioDenuncia" 
+                                            name="formularioDenuncia" method="" action=""
+                                            enctype="multipart/form-data">
+                                                <div class="header header-info text-center">
+                                                    <h4>DENUNCIAR</h4>
+
+                                                </div>
+                                                <div class="content">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Título</label>
+                                                            <input type="text" id="titulo" name="titulo" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    </br>
+                                                    <div class="team-player">
+                                                        <div class="col-sm-12">
+                                                            <select id="idtipo_denuncia" name="idtipo_denuncia" 
+                                                            class="browser-default" style="color:#000;">                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    </br>
+
+                                                    </br>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Denunciado</label>
+                                                            <input type="text" id="denunciado" name="denunciado" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Cargo</label>
+                                                            <input type="text" id="cargo" name="cargo" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Organismo Implicado</label>
+                                                            <input type="text" id="organismo_implicado" name="organismo_implicado"
+                                                            class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            
+                                                            <textarea id="descripcion" name="descripcion" class="form-control"
+                                                            placeholder="descripcion" rows="5"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-12">
+                                                        <select id="coddpto" name="coddpto" class="browser-default" style="color:#000; margin-top: 15px;">                                                            
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                        <select id="codprov" name="codprov" class="browser-default" style="color:#000;margin-top: 15px;">
+
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <select id="coddist" name="coddist" class="browser-default" style="color:#000;margin-top: 15px;">
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Imágen</label>
+                                                            <input type="file" id="imagen" name="imagen"
+                                                            class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    </br>
+                                                    </br>
+
+                                                </div>
+                                                <div class="footer text-center">
+                                                    <button type="submit" class="btn btn-simple btn-info btn-lg">Denunciar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                 <div class="row">
+                                    <div class="col-md-8 col-md-offset-2" style="padding-top: 80px">
+                                        <div class="card card-signup">
+                                            <form class="form" id="formularioDenuncia" 
+                                            name="formularioDenuncia" method="" action=""> 
+                                                <div class="content">
+                                                    </br>
+                                                     
+                                                    </br>
+
+                                                    
+                                                <table class="table" id="gegewp">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center"></th>
+                                                            <th>Pasos para realizar tu denuncia Legalmente:</th> 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center"><span class="label label-info">Paso 1</span></td>
+                                                            <td>paso 1</td>
+                                                        </tr>
+                                                       
+                                                    </tbody>
+                                                </table>
+                                                    </br>
+
+                                                </div> 
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
 
                             </div>
 
-                            <br>
-                            <br>
-
                         </div>
+                        <footer class="footer">
 
+                        </footer>
                     </div>
-                </div>
 
-            </div>
-            <footer class="footer">
-
-            </footer>
-            </div>
+                    <!--  End Modal -->
             <?php else: ?>
                 <nav class="navbar navbar-info navbar-fixed-top navbar-color-on-scroll">
                     <div class="container">
