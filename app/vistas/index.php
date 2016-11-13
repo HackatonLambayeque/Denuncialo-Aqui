@@ -57,7 +57,7 @@ session_start();
 	    <div class="collapse navbar-collapse" id="navigation-index">
 	    	<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="logout.php" target="_blank">
+					<a href="logout.php">
 						<i class="material-icons">dashboard</i> Cerrar Sesión
 					</a>
 				</li>
