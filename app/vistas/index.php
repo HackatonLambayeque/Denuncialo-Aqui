@@ -27,12 +27,11 @@ session_start();
 
 </head>
 
-<body class="index-page">
+<body class="tutorial-page">
 <?php if (isset($_SESSION['FBID'])): ?>      <!--  After user login  -->
-<?php echo  $_SESSION['FBID']; ?>
-<?php echo $_SESSION['FULLNAME']; ?>
-<?php echo $_SESSION['EMAIL']; ?>
-<nav class="navbar navbar-info navbar-fixed-top navbar-color-on-scroll">
+
+
+ <nav class="navbar navbar-info navbar-fixed-top navbar-color-on-scroll">
 	<div class="container">
         <div class="navbar-header">
 	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -44,10 +43,10 @@ session_start();
 	    	<a href="http://www.creative-tim.com">
 	        	<div class="logo-container">
 	                <div class="logo">
-	                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+	                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
 	                </div>
 	                <div class="brand">
-	                    Hola <?php echo $_SESSION['FULLNAME']; ?>
+	                    <?php echo $_SESSION['FULLNAME']; ?>
 	                </div>
 
 
@@ -71,11 +70,11 @@ session_start();
 
 <div class="wrapper">
 	<div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
-		<div class="container">
+		<div class="container" style="text-align: center;">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-4 col-md-offset-4">
 					<div class="brand">
-						<h1><img src="assets/img/logden.png"></h1>
+						 <img src="assets/img/logden.png" style="width: 80%;"> 
  					</div>
 				</div>
 			</div>
@@ -84,8 +83,7 @@ session_start();
 	</div>
 
 	<div class="main main-raised">
-		 
- 
+		  
 
 	 
 
@@ -96,7 +94,14 @@ session_start();
 	                    <h2>DENUNCIA <strong>&</strong> EDUCA</h2>
 	                    <h4>Ingresa y realiza tu denuncia</h4>
 	                </div>
-	                 
+	                <div class="row">
+						<div class="col-md-6 col-md-offset-3">
+	                 <button class="btn btn-danger btn-round btn-lg">
+						<i class="fa fa-bullhorn"></i>  DENUNCIAR
+					<div class="ripple-container"></div></button>
+ 					</div>
+ 					</div>
+    
 
 	                
 				</div>
@@ -154,11 +159,11 @@ session_start();
 
 <div class="wrapper">
 	<div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
-		<div class="container">
+		<div class="container" style="text-align: center;">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-4 col-md-offset-4">
 					<div class="brand">
-						<h1><img src="assets/img/logden.png"></h1>
+						 <img src="assets/img/logden.png" style="width: 80%;"> 
  					</div>
 				</div>
 			</div>
@@ -179,8 +184,159 @@ session_start();
 	                    <h2>DENUNCIA <strong>&</strong> EDUCA</h2>
 	                    <h4>Ingresa y realiza tu denuncia</h4>
 	                </div> 
-	                
+	                 <div class="row">
+						<div class="col-md-6 col-md-offset-3">
+	                 <button class="btn btn-danger btn-round btn-lg">
+						<i class="fa fa-bullhorn"></i>  DENUNCIAR
+					<div class="ripple-container"></div></button>
+ 					</div>
+ 					</div>
+ 					</br></br>
+ 				<div class="row">
+					<div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div>
+<div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div><div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div><div class="col-sm-4" style="padding-top: 80px">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>titulo denuncia</h4>
+									 
+								</div>
+								<p class="text-divider">Nombre Persona denuncia</p>
+								<div class="content">
+
+									<div class="team-player">
+			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%; "> <!-- FOTO DENUNCIA-->
+			                        </br>
+			                         </br>
+			                        <p class="description">Descripción.</p>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+			                    </div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
 				</div>
+
+
+ 				</div>
 
 				<br><br>
 
