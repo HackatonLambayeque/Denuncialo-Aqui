@@ -13,20 +13,59 @@ function init(){
 	$('#codprov').change(function() {
       mostrarDist();
 	});
+
+	$('#idtipo_denuncia').change(function() {
+      	cargarPasos();
+	});
+
     $("#formularioDenuncia").on("submit",function(e)
 	{
 		addOrEdit(e);	
 	});
 	listarArchivos();
-}
 
+}
+//Mostramos los departamentos
+function cargarPasos()
+{
+	//Cargamos los items al combobox departamento
+	idtipo_denuncia = $("#idtipo_denuncia").val();
+	$.post("../ajax/denuncia.php?op=listarPasos",{idtipo_denuncia:idtipo_denuncia}, function(r){
+			r = JSON.parse(r)
+			$("#gegewp").find('tbody').empty()
+			for (var i = 0; i < r.length; i++) {
+				$("#gegewp").find('tbody')
+				    .append($('<tr>')
+				        .append($('<td>')
+				        	.attr('class','text-center')
+				            .append($('<span>')
+				                .attr('class', 'label label-info')
+				                .text(r[i][0])
+				        
+				            
+				        )
+				    ).append($('<td>')				    
+				             .text(r[i][0])
+				        
+				            
+				        )
+				    )
+				     
+			}
+	            //$("#gegewp").html(r);
+	        //    console.log(r)
+
+	});
+}
 //Mostramos los departamentos
 function mostrarTiposDenuncia()
 {
 	//Cargamos los items al combobox departamento
 	$.post("../ajax/denuncia.php?op=listarTiposDenuncia", function(r){
 	            $("#idtipo_denuncia").html(r);
+	            cargarPasos();
 	});
+
 }
 function mostrarDpto()
 {

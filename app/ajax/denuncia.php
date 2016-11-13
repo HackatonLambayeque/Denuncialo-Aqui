@@ -9,6 +9,7 @@
 
   	$idtipo_denuncia = isset($_POST["idtipo_denuncia"]) ? ($_POST["idtipo_denuncia"]) : "";
   	$denunciado = isset($_POST["denunciado"]) ? ($_POST["denunciado"]) : "";
+  	$titulo = isset($_POST["titulo"]) ? ($_POST["titulo"]) : "";
 
   	$cargo = isset($_POST["cargo"]) ? ($_POST["cargo"]) : "";
   	$organismo_implicado = isset($_POST["organismo_implicado"]) ? ($_POST["organismo_implicado"]) : "";
@@ -19,12 +20,21 @@
 	switch ($_GET["op"]) {
 		
 		case 'SaveOrUpdate':
-			
+		  	////MOVER LA FOTO A LA CARPETA FILES/PACIENTE
+			if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name'])) 
+			{
+				$foto = "";
+			}else
+			{
+				$temp = explode(".", $_FILES["imagen"]["name"]);
+				$foto = round(microtime(true)) . '.' . end($temp);		
+				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../Files/denuncias/" . $foto);
+			}			
 			if(empty($iddenuncia))
 			{		
 				$rspta = $denuncia->add($idusuario,$idubigeo,$idtipo_denuncia,$denunciado,$cargo,
 					$organismo_implicado,
-					$descripcion);
+					$descripcion,$foto,$titulo);
 				echo $rspta ? "Denuncia registrada" : "Denuncia no se pudo registrar";
 			}			
 			break;
@@ -47,25 +57,32 @@
 		            echo '<option value=' . $reg->idtipo_denuncia . '>' . $reg->nombre . '</option>';
 		        }		
 		break;
+		case "listarPasos":
+				$rspta = $denuncia->listarPasos($idtipo_denuncia);
+				$data = Array();
+				while ($reg = $rspta->fetch_object())
+				{
+					$data[]  = array("0"=>$reg->nombre,
+									 "1"=>$reg->descripcion);
+				}		
+				echo json_encode($data);
+		break;
 		case "lista":
 				$rspta = $denuncia->getAll();
 				while ($reg = $rspta->fetch_object())
 				{
-		            echo '<div class="col-sm-4" style="padding-top: 80px">
+		            echo '<div class="col-sm-4" style="padding-top:10px;">
 						<div class="card card-signup">
 							<form class="form" method="" action="">
-								<div class="header header-info text-center">
-									<h4>'.$reg->titulo.'</h4>
-									 
-								</div>
+								<h4><strong>'.$reg->titulo.'</strong></h4>
 								<p class="text-divider">'.$reg->denunciado.'</p>
 								<div class="content">
 
 									<div class="team-player">
-			                        <img src="../files/denuncias/'.$reg->imagen.'" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
+			                        <img src="../files/denuncias/'.$reg->imagen.'" alt="Thumbnail Image" class="img-raised " style="width: 65%"> <!-- FOTO DENUNCIA-->
 			                        </br>
 			                         </br>
-			                        <p class="description">Descripción.</p>
+			                        <p class="description">'.$reg->descripcion.'</p>
 									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
 									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
 									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>

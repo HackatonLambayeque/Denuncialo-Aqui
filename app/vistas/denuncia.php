@@ -89,7 +89,7 @@ session_start();
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="http://www.creative-tim.com">
+                        <a href="index.php">
                             <div class="logo-container">
                                 <div class="logo">
                                     <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
@@ -171,10 +171,10 @@ session_start();
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="http://www.creative-tim.com">
+                            <a href="index.php" >
                                 <div class="logo-container">
                                     <div class="logo">
-                                        <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+                                        <img src="assets/img/logo.png"  data-placement="bottom" data-html="true">
                                     </div>
                                     <div class="brand">
                                         DENUNCIA AQUÍ / LAMBAYEQUE
@@ -229,12 +229,19 @@ session_start();
                                     <div class="col-md-8 col-md-offset-2" style="padding-top: 80px">
                                         <div class="card card-signup">
                                             <form class="form" id="formularioDenuncia" 
-                                            name="formularioDenuncia" method="" action="">
+                                            name="formularioDenuncia" method="" action=""
+                                            enctype="multipart/form-data">
                                                 <div class="header header-info text-center">
                                                     <h4>DENUNCIAR</h4>
 
                                                 </div>
                                                 <div class="content">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Título</label>
+                                                            <input type="text" id="titulo" name="titulo" class="form-control">
+                                                        </div>
+                                                    </div>
                                                     </br>
                                                     <div class="team-player">
                                                         <div class="col-sm-12">
@@ -289,7 +296,13 @@ session_start();
                                                         </select>
                                                     </div>
 
-
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Imágen</label>
+                                                            <input type="file" id="imagen" name="imagen"
+                                                            class="form-control">
+                                                        </div>
+                                                    </div>
                                                     </br>
                                                     </br>
 
@@ -302,6 +315,42 @@ session_start();
                                     </div>
 
                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-md-8 col-md-offset-2" style="padding-top: 80px">
+                                        <div class="card card-signup">
+                                            <form class="form" id="formularioDenuncia" 
+                                            name="formularioDenuncia" method="" action=""> 
+                                                <div class="content">
+                                                    </br>
+                                                     
+                                                    </br>
+
+                                                    
+                                                <table class="table" id="gegewp">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center"></th>
+                                                            <th>Pasos para realizar tu denuncia Legalmente:</th> 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center"><span class="label label-info">Paso 1</span></td>
+                                                            <td>paso 1</td>
+                                                        </tr>
+                                                       
+                                                    </tbody>
+                                                </table>
+                                                    </br>
+
+                                                </div> 
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
 
                         </div>

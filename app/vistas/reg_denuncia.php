@@ -9,7 +9,7 @@ session_start();
 	<link rel="icon" type="image/png" href="assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Denuncia Aquí - Lambayeque</title>
+	<title>Denúncia Aquí - Lambayeque</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -24,7 +24,55 @@ session_start();
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="assets/css/demo.css" rel="stylesheet" />
+	<style>
+	select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 16px;
+  color: rgba(0,0,0, 0.26);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
 
+/* Remove focus */
+select:focus {
+  outline: none;
+}
+
+/* Hide label */
+.mdl-selectfield label {
+  display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+}
+.mdl-selectfield:after {
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid rgba(0,0,0, 0.12);
+  pointer-events: none;
+}
+
+	</style>
 </head>
 
 <body class="tutorial-page">
@@ -40,7 +88,7 @@ session_start();
 	        	<span class="icon-bar"></span>
 	        	<span class="icon-bar"></span>
 	    	</button>
-	    	<a href="http://www.creative-tim.com">
+	    	<a href="index.php">
 	        	<div class="logo-container">
 	                <div class="logo">
 	                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
@@ -130,7 +178,7 @@ session_start();
 	        	<span class="icon-bar"></span>
 	        	<span class="icon-bar"></span>
 	    	</button>
-	    	<a href="http://www.creative-tim.com">
+	    	<a href="index.php">
 	        	<div class="logo-container">
 	                <div class="logo">
 	                    <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
@@ -178,170 +226,93 @@ session_start();
 	 
 
 	    <div class="section section-download">
-	        <div class="container">
+	        <div class="container" >
 	            <div class="row text-center">
-	                <div class="col-md-8 col-md-offset-2">
+	                <div class="col-md-8 col-md-offset-2" >
 	                    <h2>DENUNCIA <strong>&</strong> EDUCA</h2>
 	                    <h4>Ingresa y realiza tu denuncia</h4>
 	                </div> 
-	                 <div class="row">
-						<div class="col-md-6 col-md-offset-3">
-	                 <button class="btn btn-danger btn-round btn-lg">
-						<i class="fa fa-bullhorn"></i>  DENUNCIAR
-					<div class="ripple-container"></div></button>
- 					</div>
- 					</div>
+	                
  					</br></br>
- 				<div class="row">
-					<div class="col-sm-4" style="padding-top: 80px">
-						<div class="card card-signup">
-							<form class="form" method="" action="">
-								<div class="header header-info text-center">
-									<h4>titulo denuncia</h4>
-									 
-								</div>
-								<p class="text-divider">Nombre Persona denuncia</p>
-								<div class="content">
-
-									<div class="team-player">
-			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
-			                        </br>
-			                         </br>
-			                        <p class="description">Descripción.</p>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
-			                    </div>
-
-									<!-- If you want to add a checkbox to this form, uncomment this code
-
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
-								</div>
-								<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
-								</div>
-							</form>
-						</div>
-					</div>
-<div class="col-sm-4" style="padding-top: 80px">
-						<div class="card card-signup">
-							<form class="form" method="" action="">
-								<div class="header header-info text-center">
-									<h4>titulo denuncia</h4>
-									 
-								</div>
-								<p class="text-divider">Nombre Persona denuncia</p>
-								<div class="content">
-
-									<div class="team-player">
-			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
-			                        </br>
-			                         </br>
-			                        <p class="description">Descripción.</p>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
-			                    </div>
-
-									<!-- If you want to add a checkbox to this form, uncomment this code
-
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
-								</div>
-								<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
-								</div>
-							</form>
-						</div>
-					</div><div class="col-sm-4" style="padding-top: 80px">
-						<div class="card card-signup">
-							<form class="form" method="" action="">
-								<div class="header header-info text-center">
-									<h4>titulo denuncia</h4>
-									 
-								</div>
-								<p class="text-divider">Nombre Persona denuncia</p>
-								<div class="content">
-
-									<div class="team-player">
-			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%"> <!-- FOTO DENUNCIA-->
-			                        </br>
-			                         </br>
-			                        <p class="description">Descripción.</p>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
-			                    </div>
-
-									<!-- If you want to add a checkbox to this form, uncomment this code
-
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
-								</div>
-								<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
-								</div>
-							</form>
-						</div>
-					</div><div class="col-sm-4" style="padding-top: 80px">
-						<div class="card card-signup">
-							<form class="form" method="" action="">
-								<div class="header header-info text-center">
-									<h4>titulo denuncia</h4>
-									 
-								</div>
-								<p class="text-divider">Nombre Persona denuncia</p>
-								<div class="content">
-
-									<div class="team-player">
-			                        <img src="assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle" style="width: 45%; "> <!-- FOTO DENUNCIA-->
-			                        </br>
-			                         </br>
-			                        <p class="description">Descripción.</p>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-									<a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
-			                    </div>
-
-									<!-- If you want to add a checkbox to this form, uncomment this code
-
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
-								</div>
-								<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
-								</div>
-							</form>
-						</div>
-					</div>
-
-
-				</div>
-
-
+ 			 
+ 					
  				</div>
+<div class="row" >
+					<div class="col-md-8 col-md-offset-2" style="padding-top: 80px" >
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-info text-center">
+									<h4>DENUNCIAR</h4>
+									 
+								</div>
+ 								<div class="content"> 
+ 								</br>
+								<div class="team-player">
+			                        	<div class="col-sm-12">
+				 							<select class="browser-default" style="color:#000;">
+								          <option value="" disabled selected>Tipo de Denuncia</option>
+								          <option value="1">Corrupción</option>
+								          <option value="2">Coima</option>
+								          <option value="3">Abuso de autoridad</option>
+								          <option value="4">Otros</option>
+								        </select> 
+				 						</div>
+			                    </div>
+			                    </br>
+			                    <textarea class="form-control" style=" border-style: solid;
+    border-color: #ff0000 " placeholder="Observación" rows="5"></textarea>
+			                    </br>	
+			            <div class="col-sm-4">
+	<div class="form-group label-floating">
+		<label class="control-label">With Floating Label</label>
+		<input type="email" class="form-control">
+	</div>
+</div>
+			                    <div class="col-sm-12">
+				 						  <select class="browser-default" style="color:#000; margin-top: 15px;">
+								          <option value="" disabled selected>Departamento</option>
+								          <option value="1">Corrupción</option>
+								          <option value="2">Coima</option>
+								          <option value="3">Abuso de autoridad</option>
+								          <option value="4">Otros</option>
+								</select> 
+				 				 
+			                    </div>
+			               
+			                  
+			                    <div class="col-sm-12">
+				 							<select class="browser-default" style="color:#000;margin-top: 15px;">
+								          <option value="" disabled selected>Distrito</option>
+								          <option value="1">Corrupción</option>
+								          <option value="2">Coima</option>
+								          <option value="3">Abuso de autoridad</option>
+								          <option value="4">Otros</option>
+								        </select> 
+				 						</div>
+			               
 
-				<br><br>
-
-				 
-	            </div>
+			                  
+			                
+			                        	<div class="col-sm-12">
+				 							<select class="browser-default" style="color:#000;margin-top: 15px;">
+								          <option value="" disabled selected>Provincia</option>
+								          <option value="1">Corrupción</option>
+								          <option value="2">Coima</option>
+								          <option value="3">Abuso de autoridad</option>
+								          <option value="4">Otros</option>
+								        </select> 
+				 						</div>
+			                
+			                    </br></br>
+								
+								</div>
+								<div class="footer text-center">
+									<a href="#" class="btn btn-simple btn-info btn-lg">Denunciar</a>
+								</div>
+							</form>
+						</div>
+					</div>
+			 
 
 	            
 	        </div>

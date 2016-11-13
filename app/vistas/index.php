@@ -9,7 +9,7 @@ session_start();
 	<link rel="icon" type="image/png" href="assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Denúncia Aquí - Lambayeque</title>
+	<title>Denuncia Aquí - Lambayeque</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -40,7 +40,7 @@ session_start();
 	        	<span class="icon-bar"></span>
 	        	<span class="icon-bar"></span>
 	    	</button>
-	    	<a href="http://www.creative-tim.com">
+	    	<a href="index.php">
 	        	<div class="logo-container">
 	                <div class="logo">
 	                    <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Creative Tim Logo" rel="tooltip" title="<b>id:<?php echo  $_SESSION['FBID']; ?></b>   <b><?php echo $_SESSION['FULLNAME']; ?></b> <b><?php echo $_SESSION['EMAIL']; ?></b>" data-placement="bottom" data-html="true">
@@ -96,12 +96,12 @@ session_start();
 	                </div>
 	                <div class="row">
 						<div class="col-md-6 col-md-offset-3">
-	                 <button class="btn btn-danger btn-round btn-lg">
+	                 <a class="btn btn-danger btn-round btn-lg" href="denuncia.php">
 						<i class="fa fa-bullhorn"></i>  DENUNCIAR
-					<div class="ripple-container"></div></button>
+					<div class="ripple-container"></div></a>
  					</div>
  					</div>
-    
+    	<div id="divdenuncias"></div>
 
 	                
 				</div>
@@ -130,10 +130,10 @@ session_start();
 	        	<span class="icon-bar"></span>
 	        	<span class="icon-bar"></span>
 	    	</button>
-	    	<a href="http://www.creative-tim.com">
+	    	<a href="index.php">
 	        	<div class="logo-container">
 	                <div class="logo">
-	                    <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+	                    <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" data-placement="bottom" data-html="true">
 	                </div>
 	                <div class="brand">
 	                    DENUNCIA AQUÍ / LAMBAYEQUE
@@ -186,9 +186,9 @@ session_start();
 	                </div> 
 	                 <div class="row">
 						<div class="col-md-6 col-md-offset-3">
-	                 <button class="btn btn-danger btn-round btn-lg">
+	                 <a class="btn btn-danger btn-round btn-lg" href="denuncia.php">
 						<i class="fa fa-bullhorn"></i>  DENUNCIAR
-					<div class="ripple-container"></div></button>
+					<div class="ripple-container"></div></a>
  					</div>
  					</div>
  					</br></br>

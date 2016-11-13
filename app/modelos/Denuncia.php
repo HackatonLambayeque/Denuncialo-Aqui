@@ -9,7 +9,7 @@
 			
 		}
 
-		public function add($idusuario,$idubigeo,$idtipo_denuncia,$denunciado,$cargo,$organismo_implicado,$descripcion)
+		public function add($idusuario,$idubigeo,$idtipo_denuncia,$denunciado,$cargo,$organismo_implicado,$descripcion,$imagen,$titulo)
 		{				
 			if ( trim($idusuario) == "" )
 			{
@@ -21,10 +21,10 @@
 			$idusuario = $idusuario["idusuario"];
 			$sql = "INSERT INTO denuncia(idusuario, idubigeo, idtipo_denuncia, denunciado,
 								cargo, organismo_implicado,
-								fecha, hora, descripcion,estado)
+								fecha, hora, descripcion,estado,imagen,titulo)
 					VALUES('$idusuario','$idubigeo','$idtipo_denuncia','$denunciado',
 						   '$cargo','$organismo_implicado', now(),TIME(now()),
-						   '$descripcion','1');";
+						   '$descripcion','A','$imagen','$titulo');";
 			return ejecutarConsulta($sql);			
 		}
 			
@@ -49,7 +49,7 @@
 		{
 			$sql = "SELECT 	d.iddenuncia,u.idusuario, u.Fname, t.nombre,d.titulo, d.denunciado,
 								d.cargo, d.organismo_implicado,
-								d.fecha, d.hora, d.descripcion,ifnull((select archivo from archivo where iddenuncia=d.iddenuncia LIMIT 0,1),'sinimagen.JPG') as imagen
+								d.fecha, d.hora, d.descripcion,ifnull((d.imagen),'sinimagen.JPG') as imagen
 								FROM denuncia d INNER JOIN users u ON d.idusuario=u.idusuario INNER JOIN tipo_denuncia t ON d.idtipo_denuncia=t.idtipo_denuncia
 					WHERE d.estado ='A'";
 			return ejecutarConsulta($sql);
@@ -61,5 +61,11 @@
 					WHERE estado = 'A'";
 			return ejecutarConsulta($sql);
 		}		
-
+		public function listarPasos($idtipo_denuncia)
+		{
+			$sql = "SELECT 	*
+					FROM pasos_denuncia
+					WHERE idtipo_denuncia = '$idtipo_denuncia' order by numero asc";
+			return ejecutarConsulta($sql);
+		}	
 	}
