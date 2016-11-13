@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$idusuario = isset($_SESSION["Fuid"]) ? $_SESSION["Fuid"] : "00000001"; 
+	$idusuario = isset($_SESSION["FBID"]) ? $_SESSION["FBID"] : "00000001"; 
 	$iddenuncia = isset($_POST["iddenuncia"]) ? $_POST["iddenuncia"] : "0"; 
 	$descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : ""; 
 	

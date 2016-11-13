@@ -248,11 +248,11 @@ session_start();
 										</div>
 									</div>
 				     	           </div>
-
+                                
                                  <div class="row">
                                     <div class="col-md-8 col-md-offset-2" style="padding-top: 80px">
                                         <div class="card card-signup">
-                                            <form class="form" id="formularioDenuncia" 
+                                            <form class="form" id="formularioDenuncia"
                                             name="formularioDenuncia" method="" action=""> 
                                                 <div class="content">
                                                     </br>
@@ -263,17 +263,25 @@ session_start();
 									  border-right: 1px solid #d0d0d0;
 									  border-bottom: 1px solid #d0d0d0;
 									  border-left: 1px solid #d0d0d0;"
-									   placeholder="Comentario" rows="5"></textarea>
+									   placeholder="Comentario" rows="5" id="descripcion" name="descripcion"></textarea>
 
 
                                                     </br>
-<div class="footer text-center">
-									<a href="#" class="btn btn-simple btn-info btn-lg">COMENTAR</a>
-								</div>
+                                                <div class="footer text-center">
+                									<button type="submit" id="btnSubmitComentario" class="btn btn-simple btn-info btn-lg">COMENTAR</button>
+                								</div>
                                                 </div> 
+                                                <input type="hidden" name="iddenuncia" id="iddenuncia">
                                             </form>
                                         </div>
-                                    </div>
+
+                                          <div class="row">
+                                   
+                                            <form class="form"   method="" action="" style="padding-top: 15px;" id="gegecomentariosxd"> 
+                                                
+                                            </form>
+
+
 
                                 </div>
 
@@ -317,13 +325,54 @@ session_start();
             }
 
         });
+    $("#formularioDenuncia").on("submit",function(e)
+    {
+        addOrEdit(e);   
+    })
 
+    /*
+    *Funcion: addOrEdit
+    *Para registrar o actualizar un registro en la BD
+    */
+    function addOrEdit(e)
+    {
+        e.preventDefault();
+        
+        var formData = new FormData($("#formularioDenuncia")[0]);
+
+        $.ajax({
+            url: "../ajax/comentario.php?op=SaveOrUpdate",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(datos)
+            {                    
+                  console.log(datos)       
+                   $("#gegecomentariosxd").empty();
+                    $.post('../ajax/comentario.php?op=getComentarios',{iddenuncia:iddenuncia},function(r)
+                    {            
+                       
+                        r = JSON.parse(r)
+                        //console.log(r[0])
+                        for (var i = r.length - 1; i >= 0; i--) {
+                            console.log(i)
+                            $("#gegecomentariosxd").append("<div class='content'>"+r[i][1]+"</div>")    
+                        }
+                        
+                    })
+            }
+        });
+        limpiar();
+    }
 
         var iddenuncia = location.search.split('id=')[1]
+
+        $("#iddenuncia").val(iddenuncia)
         $.post('../ajax/comentario.php?op=getDenuncia',{iddenuncia:iddenuncia},function(r)
         {            
             r = JSON.parse(r)
-            console.log(r[0])       
+            //console.log(r[0])       
 
             $("#comentariosxd").find("h4").append("strong").text(r[0][5])        
             $("#comentariosxd").find("#descripcionxd").text(r[0][1])        
@@ -332,15 +381,15 @@ session_start();
 
             
         })
+        $("#gegecomentariosxd").empty();
         $.post('../ajax/comentario.php?op=getComentarios',{iddenuncia:iddenuncia},function(r)
         {            
             r = JSON.parse(r)
-            console.log(r[0])  
-            $("#comentariosxd").find("h4").append("strong").text(r[0][5])        
-            $("#comentariosxd").find("#descripcionxd").text(r[0][1])        
-            $("#comentariosxd").find("img").attr("src","../files/denuncias/"+r[0][3])
-            
-
+            //console.log(r[0])
+            for (var i = 0; i < r.length; i++) {
+                console.log(i)
+                $("#gegecomentariosxd").append(" <div class='col-md-8 col-md-offset-2' style='padding-top:15px; text-align: center;'><div class='card card-signup'><div class='content'>"+r[i][1]+"</div></div></div>")    
+            }
             
         })
     </script>
